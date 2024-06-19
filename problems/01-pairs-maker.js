@@ -5,8 +5,16 @@ element from the input array.
 */
 
 // Your code here 
-
-// console.log(pairsMaker(["a", "b", "c", "d"]));
+function pairsMaker(arr){
+    let pairs = []
+    for (let i = 0; i < arr.length; i++){
+        for (let j = i + 1; j < arr.length; j++){
+            pairs.push([arr[i], arr[j]]);
+        }
+    }
+    return pairs
+}
+//  console.log(pairsMaker(["a", "b", "c", "d"]));
 // //=> [ [ 'a', 'b' ],
 // //     [ 'a', 'c' ],
 // //     [ 'a', 'd' ],
