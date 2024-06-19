@@ -5,7 +5,15 @@ least one value.
 */
 
 function maxInMatrix(matrix) {
-  // Your code here 
+  let max = -Infinity;                               // initialize a variable 'max' to '-Infinity' to make sure that any number in the matrix will be larger
+  for (let i = 0; i < matrix.length; i++) {          // outer loop iterates over each subarray in the matrix
+    for (let j = 0; j < matrix[i].length; j++) {     // inner loop iterates over each element in the current subarray
+      if (matrix[i][j] > max) {                      // check if the current element matrix[i][j] is greater than max in each iteration of the inner loop
+        max = matrix[i][j];                          // if it is update max to this value
+      }
+    }
+  }
+  return max;                                        // return 'max' after all elements have been processed 
 }
 
 // matrix = [
