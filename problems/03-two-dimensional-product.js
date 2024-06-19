@@ -5,7 +5,16 @@ numbers multiplied together.
 */
 
 // Your code here 
-
+function twoDimensionalProduct(arr) {
+    let product = 1;                                 // initialize a variable 'totalProduct' to 1 since I need to multiply, to hold the total product of all elements in the 2D array
+    for (let i = 0; i < arr.length; i++) {           // outer loop iterates over each subarray in the 2D array.
+      for (let j = 0; j < arr[i].length; j++) {      // inner loop iterates over each element in the current subarray
+        product *= arr[i][j];                        // the current element arr[i][j] is multiplied to product in each iteration of the inner loop
+      }
+    }
+    return product;                                  // the product is returned as the result after all elements have been processed
+  }
+  
 // let arr1 = [[6, 4], [5], [3, 1]];
 // console.log(twoDimensionalProduct(arr1)); // 360
 
