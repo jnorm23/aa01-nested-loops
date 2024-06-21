@@ -6,8 +6,22 @@ each of its elements is the max value in a column.
 */
 
 function maxColumn(matrix) {
-  // Your code here 
-}
+  if (matrix.length === 0) return [];                      // if the input matrix is empty, return an empty array
+
+  const numRows = matrix.length;                           // determine the number of rows 'numRows' in the matrix
+  const numCols = matrix[0].length;                        // determine the number of columns 'numCols' in the matrix
+  const maxValues = new Array(numCols).fill(-Infinity);    // create an array 'maxValues' with the same length as the number of columns
+                                                           // filled with '-Infinity' to handle any initial comparisons
+  for (let col = 0; col < numCols; col++) {                // use a nested loop to iterate through each column and row
+      for (let row = 0; row < numRows; row++) {
+          if (matrix[row][col] > maxValues[col]) {         // for each element in the column compare it with the current maximum value stored in 'maxValues' for that column 
+              maxValues[col] = matrix[row][col];           // and update accordingly
+          }
+      }
+  }
+
+  return maxValues;                                        // return the 'maxValues' array containing the maximum values after iterating through all elements for each column
+} 
 
 // matrix = [
 //   [5, 9, 21],
