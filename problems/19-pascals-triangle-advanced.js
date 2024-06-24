@@ -18,7 +18,24 @@ For example, here are the first 5 levels of Pascal's triangle:
 */
 
 // Your code here 
-
+function pascalsTriangle(n) {
+    if (n <= 0) return []; 
+    let triangle = [];
+    triangle.push([1]);
+    
+    for (let i = 1; i < n; i++) {
+        let currentLevel = [];
+        for (let j = 0; j <= i; j++) {
+            let leftVal = (j > 0) ? triangle[i - 1][j - 1] : 0;
+            let rightVal = (j < triangle[i - 1].length) ? triangle[i - 1][j] : 0;
+            let sum = leftVal + rightVal;
+            currentLevel.push(sum);
+        }
+        triangle.push(currentLevel);
+    }
+    
+    return triangle;
+}
 // console.log(pascalsTriangle(5));
 /*
 [

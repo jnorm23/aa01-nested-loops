@@ -14,7 +14,22 @@ For example, given 2, 3, 7, 5, 9 as the base, we should construct this pyramid:
 */
 
 // Your code here 
+function pyramidArray(base) {
+  let pyramid = [base];
 
+  for (let i = base.length - 1; i > 0; i--) {
+      let currentRow = [];
+      for (let j = 0; j < pyramid[pyramid.length - 1].length - 1; j++) {
+          let sum = pyramid[pyramid.length - 1][j] + pyramid[pyramid.length - 1][j + 1];
+          currentRow.push(sum);
+      }
+      pyramid.push(currentRow);
+  }
+
+  pyramid.reverse();
+
+  return pyramid;
+}
 // let p1 = pyramidArray([2, 3, 7, 5, 9]);
 // console.log(p1);
 /*
