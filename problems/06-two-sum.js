@@ -6,6 +6,18 @@ contains only unique numbers.
 */
 
 // Your code here 
+function twoSum(arr, target) {
+    const seenNumbers = new Set();
+
+    for (let num of arr) {
+        let complement = target - num;
+        if (seenNumbers.has(complement)) {
+            return true;
+        }
+        seenNumbers.add(num);
+    }
+    return false;
+}
 
 // console.log(twoSum([1, 7, 3, 0, 2], 5)); // true
 // console.log(twoSum([1, 7, 3, 0, 2], 6)); // false
