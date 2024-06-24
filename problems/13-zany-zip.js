@@ -6,7 +6,19 @@ shorter than the other, then substitute null for the missing elements.
 */
 
 // Your code here 
+function zanyZip(arr1, arr2) {
+    let result = [];
 
+    let maxLength = Math.max(arr1.length, arr2.length);
+
+    for (let i = 0; i < maxLength; i++) {
+        let elem1 = (i < arr1.length) ? arr1[i] : null;
+        let elem2 = (i < arr2.length) ? arr2[i] : null;
+        result.push([elem1, elem2]);
+    }
+
+    return result;
+}
 // console.log(zanyZip([1, 2], ["eins", "zwei", "drei", "vier"]));
 // // [ [ 1, 'eins' ], [ 2, 'zwei' ], [ null, 'drei' ], [ null, 'vier' ] ]
 

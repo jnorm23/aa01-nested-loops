@@ -5,7 +5,21 @@ switched. See test cases for examples.
 */
 
 // Your code here 
+function transpose(matrix) {
+    let transposed = [];
 
+    for (let i = 0; i < matrix[0].length; i++) {
+        let row = [];
+        
+        for (let j = 0; j < matrix.length; j++) {
+            row.push(matrix[j][i]);
+        }
+        
+        transposed.push(row);
+    }
+
+    return transposed;
+}
 // let arr1 = [
 //   [1, 2, 3],
 //   [4, 5, 6],

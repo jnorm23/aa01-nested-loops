@@ -9,7 +9,27 @@ into the number type. For example. Number("4") // => 4
 */
 
 // Your code here 
+function uncompress(str) {
+    let result = '';
+    let i = 0; 
 
+    while (i < str.length) {
+        let char = str[i]; 
+        i++; 
+        let numStr = ''; 
+
+        while (i < str.length && !isNaN(str[i])) {
+            numStr += str[i]; 
+            i++; 
+        }
+        let count = Number(numStr); 
+        for (let j = 0; j < count; j++) {
+            result += char;
+        }
+    }
+
+    return result; 
+}
 // console.log(uncompress("x3y4z2"));   // 'xxxyyyyzz'
 // console.log(uncompress("a5b2c4z1")); // 'aaaaabbccccz'
 // console.log(uncompress("b1o2t1"));   // 'boot'
