@@ -8,7 +8,21 @@ To add matrices, we add the values at the same positions.
 */
 
 // Your code here 
+function matrixAddition(matrix1, matrix2) {
+    let result = [];
 
+    for (let i = 0; i < matrix1.length; i++) {
+        let row = [];
+        
+        for (let j = 0; j < matrix1[i].length; j++) {
+            row.push(matrix1[i][j] + matrix2[i][j]);
+        }
+        
+        result.push(row);
+    }
+
+    return result;
+}
 // let matrixA = [
 //   [2, 5],
 //   [4, 7],
