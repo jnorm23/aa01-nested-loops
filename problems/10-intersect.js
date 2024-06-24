@@ -4,7 +4,20 @@ returns a new array containing the elements common to both arrays.
 */
 
 // Your code here 
+function intersect(arr1, arr2) {
+    const result = [];
 
+    for (let i = 0; i < arr1.length; i++) {
+        for (let j = 0; j < arr2.length; j++) {
+            if (arr1[i] === arr2[j]) {
+                result.push(arr1[i]);
+                break; 
+            }
+        }
+    }
+
+    return result;
+}
 // console.log(intersect(["a", "b", "c", "d"], ["b", "d", "e"])); //=> [ 'b', 'd' ]
 // console.log(intersect(["a", "b", "c"], ["x", "y", "z"])); //=> []
 

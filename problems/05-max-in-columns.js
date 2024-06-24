@@ -8,9 +8,9 @@ each of its elements is the max value in a column.
 function maxColumn(matrix) {
   if (matrix.length === 0) return [];                      // if the input matrix is empty, return an empty array
 
-  const numRows = matrix.length;                           // determine the number of rows 'numRows' in the matrix
-  const numCols = matrix[0].length;                        // determine the number of columns 'numCols' in the matrix
-  const maxValues = new Array(numCols).fill(-Infinity);    // create an array 'maxValues' with the same length as the number of columns
+  let numRows = matrix.length;                           // determine the number of rows 'numRows' in the matrix
+  let numCols = matrix[0].length;                        // determine the number of columns 'numCols' in the matrix
+  let maxValues = new Array(numCols).fill(-Infinity);    // create an array 'maxValues' with the same length as the number of columns
                                                            // filled with '-Infinity' to handle any initial comparisons
   for (let col = 0; col < numCols; col++) {                // use a nested loop to iterate through each column and row
       for (let row = 0; row < numRows; row++) {

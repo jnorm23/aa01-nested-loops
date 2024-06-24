@@ -7,7 +7,7 @@ contains only unique numbers.
 
 // Your code here 
 function twoSum(arr, target) {
-    const seenNumbers = new Set();
+    let seenNumbers = new Set();
 
     for (let num of arr) {
         let complement = target - num;
