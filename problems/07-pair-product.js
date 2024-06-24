@@ -7,6 +7,16 @@ You may assume that the input array contains unique elements.
 */
 
 // Your code here 
+function pairProduct(arrOfNums, product) {
+    for (let i = 0; i < arrOfNums.length; i++) {
+        for (let j = i + 1; j < arrOfNums.length; j++) {
+            if (arrOfNums[i] * arrOfNums[j] === product) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
 
 // console.log(pairProduct([4, 2, 5, 8], 16));    // true
 // console.log(pairProduct([8, 1, 9, 3], 8));     // true
