@@ -4,7 +4,17 @@ The method should return a count of the number of distinct pairs of elements
 that have a sum of zero. You may assume that the input array contains unique
 elements.
 */
-
+function strangeSums(arr) {
+    let count = 0; 
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[i] + arr[j] === 0) {
+                count++;
+            }
+        }
+    }
+    return count;
+}
 
 // console.log(strangeSums([2, -3, 3, 4, -2]));     // 2
 // console.log(strangeSums([42, 3, -1, -42]));      // 1
